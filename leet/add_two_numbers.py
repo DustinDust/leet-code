@@ -1,21 +1,14 @@
-from distutils.command.build_scripts import first_line_re
 from typing import Optional
+from .common.list_node import ListNode
 
-
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+'''
+O(max{m, n}): m and n are the length of 2 linked list
+Loop through linked lists and add each digit with a 'remember digit'
+'''
 
 
 class Solution:
-    def listnode_tostring(self, l: ListNode):
-        str = f'{l.val}'
-        while l.next is not None:
-            l = l.next
-            str += f', {l.val}'
-        return str
-
+    # test util method
     def add_two_numbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         first_v = l1.val + l2.val if l1 is not None and l2 is not None else 0
         r_digit = 0
