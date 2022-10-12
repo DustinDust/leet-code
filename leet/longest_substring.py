@@ -3,7 +3,7 @@ from collections import Counter
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        '''Bruteforce approach, check every single substring, make sure its not repeating'''
+        '''Bruteforce approach, check every single substring, while making sure its not repeating'''
         ts = ''
         max_len = 0
         l = 0
