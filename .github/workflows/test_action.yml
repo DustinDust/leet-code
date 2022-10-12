@@ -1,4 +1,4 @@
-name: 'Run test: All English'
+name: 'Run unit test'
 
 on:
   push:
@@ -19,6 +19,6 @@ jobs:
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v3
         with:
-          path: './requirements.txt'
+          path: 'requirements.txt'
       - name: Run test
         run: pytest -vv
