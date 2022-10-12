@@ -2,9 +2,9 @@ name: 'Run test: All English'
 
 on:
   push:
-    branches: 
-    - main
-  
+    branches:
+      - main
+
 permissions:
   contents: read
 
@@ -12,9 +12,13 @@ jobs:
   run-test:
     runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
-    - name: Setup Python
-      uses: actions/setup-python@v4.3.0
-    - name: Install test-runner
-      run: pip install -r requirements.txt
-    - name: Run test
-      run: pytest -vv
+      - name: Setup Python
+        uses: actions/setup-python@v4.3.0
+        with:
+          python-version: '3.10'
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v3
+        with:
+          path: './requirements.txt'
+      - name: Run test
+        run: pytest -vv
