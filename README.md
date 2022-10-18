@@ -1,2 +1,2 @@
 # leet-code
-My leet
+My leet code journey
