@@ -1,6 +1,9 @@
 from queue import SimpleQueue as Queue, LifoQueue as Stack
 
 
+INT_MAX = 2147483647
+
+
 class Graph:
     adj_list: list[list[tuple]]
     vertices: list
@@ -91,6 +94,14 @@ class Graph:
                 if not visited[v_index]:
                     self.__dfs_util(v_index, visited, dfs_travel)
             return dfs_travel
+
+# TODO: finish this late :(
+    def dijsktra(self, starting_v, goal):
+        starting_index = self.vertices.index(starting_v)
+        goal_index = self.vertices.index(goal)
+        dis = [INT_MAX for i in self.vertices]
+        dis[starting_index] = 0
+        pass
 
 
 g = Graph(vnum=10)
